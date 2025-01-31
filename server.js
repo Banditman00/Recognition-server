@@ -6,13 +6,14 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 
 const db = knex({
   // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
-    host : '0.0.0.0',
+    host : '127.0.0.1',
     user : 'postgres',
     password : 'pula',
     database : 'smart-brain',
